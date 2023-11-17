@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #aa5454;
+        }
+
+        .container {
+            background-color:rgb(255, 255, 255);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid rgb(73, 4, 4);
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+
+            padding: 10px 20px ;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <br>
+            <input type="submit" value="Login">
+            <p id="loginError" class="error"></p>
+        </form>
+    </div>
+
+    <script>
+        function validate(){
+                var username= document.getElementById("uname");
+                var password= document.getElementById("pass");
+
+                if(username.value==""||password.value=="")
+                {
+                    alert("No blank values allowed");
+                    return false;
+                }
+                else
+                {
+                    true;
+                }
+            }
+    </script>
+</body>
+</html>
